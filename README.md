@@ -44,3 +44,26 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Basic types
+```typescript
+let name: string = 'Siva';
+let age: number = 34;
+let isMarried: boolean = true;
+let countriesVisited: Array<string> = ['Aus', 'US', 'Singapore'];
+let fibonacciNumbers: number[] = [0, 1, 1, 2, 3, 5];
+```
+
+## Complex types
+```typescript
+// tuple
+let aTuple: [string, number] = ['pincode', 500080];
+// enum
+enum Months {January, February, March};
+// any
+let someType: any = 3;
+// void
+const warning = (): void => {
+    console.warn("Warning!");
+}
+```

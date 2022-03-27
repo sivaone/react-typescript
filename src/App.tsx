@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Message from "./component/Message";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const initialState = {
+    name: 'Siva',
+    message: 'How are you?'
+};
+
+type State = Readonly<typeof initialState>;
+
+class App extends Component<any, State> {
+
+    readonly state: State = initialState;
+
+    constructor(props: any) {
+        super(props);
+        console.log("In constructor")
+    }
+
+    componentDidMount() {
+        console.log("In post constructor");
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <Message name={this.state.name} message={this.state.message}/>
+                </header>
+            </div>
+        );
+    }
 }
 
 export default App;
